@@ -1,0 +1,337 @@
+html,body{
+    margin : 0;
+    padding : 0;
+    width : 100%;
+    height : 100%;
+}
+
+.Main{
+    position: relative;
+    /* background: linear-gradient(to right, #2C5364, #203A43, #0F2027);  */
+    /* background: linear-gradient(to right, #334d50, #cbcaa5); */
+    background-color: black;
+    width : 100%;
+    height : 100%;
+    display : flex;
+    justify-content: center;
+    z-index: 1;
+}
+
+.Main::after{
+    content : "";
+    position : absolute;
+    top  : 0;
+    left : 0;
+    width : 100%;
+    height: 100%;
+    background: linear-gradient(to right, #2F80ED, #56CCF2);
+    opacity  : 0;
+    animation: after_sunrise 2000ms ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes after_sunrise{
+    0%{opacity: 0;}
+    25%{opacity: 0;}
+    50%{opacity : 0;}
+    75%{opacity : .9;}
+    100%{opacity: 1;}
+}
+
+.Main::before{
+    content : "";
+    position : absolute;
+    top  : 0;
+    left : 0;
+    width : 100%;
+    height: 100%;
+    background: linear-gradient(to right, #2F80ED, #56CCF2);
+    /* background: linear-gradient(to right, #d65215, #1565c0);  */
+    /* background-color: black; */
+    /* background-image: linear-gradient(-315deg, #f5d020 0%, #f53803 74%); */
+    opacity  : 0;
+    animation: before_sunrise 2000ms ease-out infinite;
+    z-index: -1;
+}
+
+@keyframes before_sunrise{
+    0%{opacity: .9;}
+    10%{opacity: .6;}
+    20%{opacity : .3;}
+    30%{opacity: .1;}
+    50%{opacity : .0;}
+    75%{opacity : 0;}
+    100%{opacity: 0;}
+}
+
+.Container{
+    width : 50%;
+    height:  40%;
+    margin  : auto;
+    display : flex;
+    flex-flow : row;
+    justify-content : center;
+    align-items: center;
+}
+
+.Moon{
+    position :relative;
+    top : -12px;
+    left : 60px;
+    transition: all .6s ease-out;
+}
+
+.Front_Side{
+    width : 90px;
+    height: 25px;
+    /* width : 0px; */
+    /* height : 0px; */
+    border-radius: 12px;
+    position: relative;
+    top : 57px;
+    left : -23px;
+    background: rgb(189, 187, 187);
+    transition: all .4s ease-out;
+    /* opacity : 0; */
+}
+
+.Front_Side::before{
+    content: "";
+    width : 35px;
+    height : 35px;
+    /* width : 0px; */
+    /* height: 0px; */
+    border-radius: 35px;
+    position: absolute;
+    top : -18px;
+    left : 42px;
+    background: rgb(189, 187, 187);
+    /* transition: all .4s ease-out; */
+}
+
+.Front_Side::after{
+    content: "";
+    /* width : 0px; */
+    /* height: 0px; */
+    width : 42px;
+    height : 42px;
+    border-radius: 42px;
+    position: absolute;
+    top : -25px;
+    left : 10px;
+    background: rgb(189, 187, 187);
+    /* transition: all .4s ease-out;  */
+}
+
+.Back_Side{
+    width  : 30px;
+    height : 30px;
+    background : white;
+    border-radius: 30px;
+    /* opacity : 0; */
+    /* transition: all .4s ease-out; */
+}
+
+.Moon_animation{
+    /* transform: translateX(-80px); */
+    /* transform-origin:50% 50%; */
+}
+
+.Moon_animation .Front_Side{
+    width : 90px;
+    height : 25px;
+}
+.Moon_animation .Front_Side::before{
+    width : 35px;
+    height: 35px;
+    border-radius: 35px;
+}
+
+.Moon_animation .Front_Side::after{
+    width : 42px;
+    height: 42px;
+    border-radius: 42px;
+}
+
+.Clouds{
+    width : 30px;
+    height : 30px;
+    background : white;
+    border-radius: 50%;
+}
+
+.Sun{
+    position : relative;
+    top : -17px;
+    left : 30px;
+    transition: all .6s ease-out;
+}
+
+.Sun_animation{
+    transform: rotateZ(-45deg) translateX(80px);
+}
+
+.Center {
+    width : 30px;
+    height : 30px;
+    border-radius: 30px;
+    background : white;
+    position : relative;
+    top : 17px;
+    left : -30px;
+    transition: all 1s ease-out;
+}
+
+.Rays{
+    width : 0px;
+    height : 0px;
+    background: #FDB813;
+    border-radius: 4px;
+    position: relative;
+    top : 0;
+    left : 2px;
+    animation: rays_animation 2s ease-in infinite;
+    /* transition: all .5s ease-out; */
+}
+
+.Rays::before{
+    content : "";
+    width : 0px;
+    height : 0px;
+    background: #FDB813;
+    border-radius: 4px;
+    position : absolute;
+    top : 0;
+    left : -54px;
+    animation: rays_animation 2s ease-in infinite;
+    /* transition: all .5s ease-out; */
+}
+
+.Rays1{
+    width : 0px;
+    height : 0px;
+    border-radius: 4px;
+    background: #FDB813;
+    position: relative;
+    top : 23px;
+    left : -25px;
+    transform : rotateZ(90deg);
+    animation: rays_animation 2s ease-in infinite;
+    /* transition: all .5s ease-out; */
+}
+
+.Rays1::before{
+    content : "";
+    width : 0px;
+    height : 0px;
+    background: #FDB813;
+    border-radius: 4px;
+    position: absolute;
+    top : 0px;
+    left : -54px;
+    animation: rays_animation 2s ease-in infinite;
+    /* transition: all .5s ease-out; */
+}  
+
+.Rays2{
+    width : 0px;
+    height : 0px;
+    background: #FDB813;
+    border-radius: 4px;
+    position: relative;
+    top : 12px;
+    left : -7px;
+    transform: rotateZ(45deg);
+    animation: rays_animation 2s ease-in infinite;
+    /* transition: all .5s ease-out; */
+}
+
+.Rays2::before{
+    content : "";
+    width : 0px;
+    height : 0px;
+    background: #FDB813;
+    border-radius: 4px;
+    position: absolute;
+    top : 0px;
+    left : -54px;
+    /* transition: all .5s ease-out; */
+    animation: rays_animation 2s ease-in infinite;
+
+}
+
+.Rays3{
+    width : 0px;
+    height : 0px;
+    background: #FDB813;
+    border-radius: 4px;
+    position: relative;
+    top : -31px;
+    left : -6px;
+    transform: rotateZ(-45deg);
+    /* transition: all .5s ease-out; */
+    animation: rays_animation 2s ease-in infinite;
+
+
+}
+
+.Rays3::before{
+    content : "";
+    width : 0px;
+    height : 0px;
+    background: #FDB813;
+    border-radius: 4px;
+    position: absolute;
+    top : 0px;
+    left : -54px;
+    animation: rays_animation 2s ease-in infinite;
+    /* transition: all .5s ease-out; */
+}
+
+@keyframes rays_animation{
+    0%
+    {
+        width : 0px;
+        height : 0px;
+    }
+    25%
+    {
+        width : 0px;
+        height : 0px;
+    }
+    50%
+    {
+        width : 0px;
+        height : 0px;
+    }
+    
+    75%
+    {
+        width : 18px;
+        height : 3px;
+    }
+
+    80%{
+        width : 20px;
+        height : 4px;
+    }
+
+    100%
+    {
+        width : 20px;
+        height : 4px;
+    }
+}
+
+
+.Sun_animation .Center{
+    width : 30px;
+    height : 30px;
+    /* border-radius: 50px; */
+    background: #FDB813;
+}
+
+/* .Sun_animation .Rays,.Sun_animation .Rays::before, .Sun_animation .Rays1, .Sun_animation .Rays1::before, .Sun_animation .Rays2 ,.Sun_animation .Rays2::before, .Sun_animation .Rays3,.Sun_animation .Rays3::before{
+    width : 20px;
+    height : 4px; 
+}*/

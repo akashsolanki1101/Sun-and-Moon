@@ -1,23 +1,59 @@
-html,body{
-    margin : 0;
-    padding : 0;
-    width : 100%;
-    height : 100%;
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
-.Main{
-    position: relative;
-    /* background: linear-gradient(to right, #2C5364, #203A43, #0F2027);  */
-    /* background: linear-gradient(to right, #334d50, #cbcaa5); */
-    background-color: black;
-    width : 100%;
-    height : 100%;
-    display : flex;
-    justify-content: center;
-    z-index: 1;
+.Main {
+  position: relative;
+  background: linear-gradient(to right, rgb(38, 67, 80), #203a43, #0f2027);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 1;
 }
 
-.Main::after{
+.Main::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, #2f80ed, #56ccf2);
+  opacity: 1;
+  animation: after_sunrise 2800ms ease-in-out infinite;
+  z-index: -1;
+}
+
+@keyframes after_sunrise {
+  0% {
+    opacity: 0.5;
+  }
+  25% {
+    opacity: 1;
+  }
+  35% {
+    opacity: 0.5;
+  }
+  45% {
+    opacity: 0.2;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* .Main::before{
     content : "";
     position : absolute;
     top  : 0;
@@ -26,31 +62,7 @@ html,body{
     height: 100%;
     background: linear-gradient(to right, #2F80ED, #56CCF2);
     opacity  : 0;
-    animation: after_sunrise 2000ms ease-in-out infinite;
-    z-index: -1;
-}
-
-@keyframes after_sunrise{
-    0%{opacity: 0;}
-    25%{opacity: 0;}
-    50%{opacity : 0;}
-    75%{opacity : .9;}
-    100%{opacity: 1;}
-}
-
-.Main::before{
-    content : "";
-    position : absolute;
-    top  : 0;
-    left : 0;
-    width : 100%;
-    height: 100%;
-    background: linear-gradient(to right, #2F80ED, #56CCF2);
-    /* background: linear-gradient(to right, #d65215, #1565c0);  */
-    /* background-color: black; */
-    /* background-image: linear-gradient(-315deg, #f5d020 0%, #f53803 74%); */
-    opacity  : 0;
-    animation: before_sunrise 2000ms ease-out infinite;
+    animation: before_sunrise 2800ms ease-out infinite;
     z-index: -1;
 }
 
@@ -62,276 +74,405 @@ html,body{
     50%{opacity : .0;}
     75%{opacity : 0;}
     100%{opacity: 0;}
+}  */
+
+.Moon_Clouds>.Clouds {
+  width: 0px;
+  height: 0px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  transition: all 0.5s ease-out;
 }
 
-.Container{
-    width : 50%;
-    height:  40%;
-    margin  : auto;
-    display : flex;
-    flex-flow : row;
-    justify-content : center;
-    align-items: center;
-}
-
-.Moon{
-    position :relative;
-    top : -12px;
-    left : 60px;
-    transition: all .6s ease-out;
-}
-
-.Front_Side{
-    width : 90px;
-    height: 25px;
-    /* width : 0px; */
-    /* height : 0px; */
-    border-radius: 12px;
+.Stars:nth-of-type(1)
+{
+    height : 8px;
     position: relative;
-    top : 57px;
-    left : -23px;
+    top : 40%;
+    left : 40%;
+    transform: rotateZ(40deg);
+    animation: Star_Animation 2800ms ease-in-out infinite;
+}
+
+.Stars:nth-of-type(2)
+{
+    height : 3px;
+    position: relative;
+    top : 80%;
+    left : 20%;
+    transform: rotateZ(40deg);
+    animation: Star_Animation 2800ms ease-in-out infinite;
+}
+
+.Stars:nth-of-type(3)
+{
+    height : 5px;
+    position: relative;
+    top : 20%;
+    left : 60%;
+    transform: rotateZ(40deg);
+    animation: Star_Animation 2800ms ease-in-out infinite;
+
+}
+
+.Stars:nth-of-type(4)
+{
+    height : 8px;
+    position: relative;
+    top : 10%;
+    left : 90%;
+    transform: rotateZ(20deg);
+    animation: Star_Animation 2800ms ease-in-out infinite;
+}
+
+.Stars:nth-of-type(5)
+{
+    height : 6px;
+    position: relative;
+    top : 70%;
+    left : 80%;
+    transform: rotateZ(20deg);
+    animation: Star_Animation 2800ms ease-in-out infinite;
+}
+
+.Stars:nth-of-type(6)
+{
+    height : 4px;
+    position: relative;
+    top : 50%;
+    left : 10%;
+    transform: rotateZ(30deg);
+    animation: Star_Animation 2800ms ease-in-out infinite;
+}
+
+.Stars:nth-of-type(7)
+{
+    height : 8px;
+    position: relative;
+    top : 10%;
+    left : 10%;
+    transform: rotateZ(20deg);
+    animation: Star_Animation 2800ms ease-in-out infinite;
+}
+
+@keyframes Star_Animation{
+    0%{opacity: 0;}
+    49%{opacity: 0;}
+    50%{opacity : .1;}
+    60%{opacity : .4;}
+    75%{opacity : 1;}
+    100%{opacity: 1;}
+}
+
+.Container {
+  width: 100%;
+  height: 40%;
+  margin: auto;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.Moon {
+  width: 100px;
+  height: 100px;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  transition: all 0.5s ease-out;
+}
+
+.Moon_Clouds{
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  background: white;
+  display: flex;
+  align-items: flex-end;
+  justify-content: start;
+  position: relative;
+  top: 37px;
+  left: 65px;
+  transition: all 0.5s ease-out;
+}
+
+.Moon_animation {
+  transform: rotateZ(45deg) translateX(-80px);
+}
+
+.Moon_animation .Clouds{
+  width: 80px;
+  height: 70px;
+  position: relative;
+  top: 45px;
+  left: -30px;
+  transform: rotateZ(-45deg);
+}
+
+.Clouds {
+  display: flex;
+}
+
+.Cld {
+  float: right;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: white;
+  position: relative;
+  animation: Cloud_animation 1s ease-in-out infinite;
+}
+
+.Cld::before {
+  content: "";
+  width: 40px;
+  height: 10px;
+  border-radius: 5px;
+  position: absolute;
+  top: 10px;
+  left: -5px;
+  background: white;
+  animation: Cloud_animation 2.8s ease-in-out infinite;
+}
+
+.Cld::after {
+  content: "";
+  width: 40px;
+  height: 10px;
+  border-radius: 5px;
+  position: absolute;
+  top: 10px;
+  left: -5px;
+  transform: rotateZ(90deg);
+  background: white;
+  animation: Cloud_animation 2.8s ease-in-out infinite;
+}
+
+.Cld1 {
+  float: right;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  position: relative;
+  top: 0;
+  left: 30px;
+  background: white;
+  transform: rotateZ(45deg);
+  animation: Cloud_animation 2.8s ease-in-out infinite;
+}
+
+.Cld1::before {
+  content: "";
+  width: 40px;
+  height: 10px;
+  border-radius: 5px;
+  position: absolute;
+  top: 10px;
+  left: -5px;
+  background: white;
+  animation: Cloud_animation 2.8s ease-in-out infinite;
+}
+
+.Cld1::after {
+  content: "";
+  width: 40px;
+  height: 10px;
+  border-radius: 5px;
+  position: absolute;
+  top: 10px;
+  left: -5px;
+  transform: rotateZ(90deg);
+  background: white;
+  animation: Cloud_animation 2.8s ease-in-out infinite;
+}
+
+.Cloud1 {
+  position: relative;
+  left: -30px;
+}
+
+.Cloud2 {
+  position: relative;
+  left: -50px;
+}
+
+.Cloud3 {
+  position: relative;
+  left: -70px;
+}
+
+@keyframes Cloud_animation {
+  0% {
+    background: white;
+  }
+  50% {
+    background: white;
+  }
+  51% {
     background: rgb(189, 187, 187);
-    transition: all .4s ease-out;
-    /* opacity : 0; */
-}
-
-.Front_Side::before{
-    content: "";
-    width : 35px;
-    height : 35px;
-    /* width : 0px; */
-    /* height: 0px; */
-    border-radius: 35px;
-    position: absolute;
-    top : -18px;
-    left : 42px;
+  }
+  100% {
     background: rgb(189, 187, 187);
-    /* transition: all .4s ease-out; */
+  }
 }
 
-.Front_Side::after{
-    content: "";
-    /* width : 0px; */
-    /* height: 0px; */
-    width : 42px;
-    height : 42px;
-    border-radius: 42px;
-    position: absolute;
-    top : -25px;
-    left : 10px;
-    background: rgb(189, 187, 187);
-    /* transition: all .4s ease-out;  */
+.Sun {
+  position: relative;
+  top: -16px;
+  left: -35px;
+  transition: transform 0.5s ease-out;
 }
 
-.Back_Side{
-    width  : 30px;
-    height : 30px;
-    background : white;
-    border-radius: 30px;
-    /* opacity : 0; */
-    /* transition: all .4s ease-out; */
-}
-
-.Moon_animation{
-    /* transform: translateX(-80px); */
-    /* transform-origin:50% 50%; */
-}
-
-.Moon_animation .Front_Side{
-    width : 90px;
-    height : 25px;
-}
-.Moon_animation .Front_Side::before{
-    width : 35px;
-    height: 35px;
-    border-radius: 35px;
-}
-
-.Moon_animation .Front_Side::after{
-    width : 42px;
-    height: 42px;
-    border-radius: 42px;
-}
-
-.Clouds{
-    width : 30px;
-    height : 30px;
-    background : white;
-    border-radius: 50%;
-}
-
-.Sun{
-    position : relative;
-    top : -17px;
-    left : 30px;
-    transition: all .6s ease-out;
-}
-
-.Sun_animation{
-    transform: rotateZ(-45deg) translateX(80px);
+.Sun_animation {
+  transform: rotateZ(-45deg) translateX(80px);
 }
 
 .Center {
-    width : 30px;
-    height : 30px;
-    border-radius: 30px;
-    background : white;
-    position : relative;
-    top : 17px;
-    left : -30px;
-    transition: all 1s ease-out;
+  width: 30px;
+  height: 30px;
+  border-radius: 30px;
+  background: rgb(189, 187, 187);
+  position: relative;
+  top: 17px;
+  left: -30px;
+  animation: Center_Animation 2800ms ease-in-out infinite;
 }
 
-.Rays{
-    width : 0px;
-    height : 0px;
-    background: #FDB813;
-    border-radius: 4px;
-    position: relative;
-    top : 0;
-    left : 2px;
-    animation: rays_animation 2s ease-in infinite;
-    /* transition: all .5s ease-out; */
+@keyframes Center_Animation {
+  0% {
+    background: #fdb813;
+  }
+  45% {
+    background: #fdb813;
+  }
+  50% {
+    background: rgb(189, 187, 187);
+  }
+  100% {
+    background: rgb(189, 187, 187);
+  }
 }
 
-.Rays::before{
-    content : "";
-    width : 0px;
-    height : 0px;
-    background: #FDB813;
-    border-radius: 4px;
-    position : absolute;
-    top : 0;
-    left : -54px;
-    animation: rays_animation 2s ease-in infinite;
-    /* transition: all .5s ease-out; */
+.Rays {
+  width: 0px;
+  height: 0px;
+  background: #fdb813;
+  border-radius: 4px;
+  position: relative;
+  top: 0;
+  left: 2px;
+  animation: rays_animation 2.8s ease-in infinite;
 }
 
-.Rays1{
-    width : 0px;
-    height : 0px;
-    border-radius: 4px;
-    background: #FDB813;
-    position: relative;
-    top : 23px;
-    left : -25px;
-    transform : rotateZ(90deg);
-    animation: rays_animation 2s ease-in infinite;
-    /* transition: all .5s ease-out; */
+.Rays::before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  background: #fdb813;
+  border-radius: 4px;
+  position: absolute;
+  top: 0;
+  left: -54px;
+  animation: rays_animation 2.8s ease-in infinite;
 }
 
-.Rays1::before{
-    content : "";
-    width : 0px;
-    height : 0px;
-    background: #FDB813;
-    border-radius: 4px;
-    position: absolute;
-    top : 0px;
-    left : -54px;
-    animation: rays_animation 2s ease-in infinite;
-    /* transition: all .5s ease-out; */
-}  
-
-.Rays2{
-    width : 0px;
-    height : 0px;
-    background: #FDB813;
-    border-radius: 4px;
-    position: relative;
-    top : 12px;
-    left : -7px;
-    transform: rotateZ(45deg);
-    animation: rays_animation 2s ease-in infinite;
-    /* transition: all .5s ease-out; */
+.Rays1 {
+  width: 0px;
+  height: 0px;
+  border-radius: 4px;
+  background: #fdb813;
+  position: relative;
+  top: 23px;
+  left: -25px;
+  transform: rotateZ(90deg);
+  animation: rays_animation 2.8s ease-in infinite;
 }
 
-.Rays2::before{
-    content : "";
-    width : 0px;
-    height : 0px;
-    background: #FDB813;
-    border-radius: 4px;
-    position: absolute;
-    top : 0px;
-    left : -54px;
-    /* transition: all .5s ease-out; */
-    animation: rays_animation 2s ease-in infinite;
-
+.Rays1::before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  background: #fdb813;
+  border-radius: 4px;
+  position: absolute;
+  top: 0px;
+  left: -54px;
+  animation: rays_animation 2.8s ease-in infinite;
 }
 
-.Rays3{
-    width : 0px;
-    height : 0px;
-    background: #FDB813;
-    border-radius: 4px;
-    position: relative;
-    top : -31px;
-    left : -6px;
-    transform: rotateZ(-45deg);
-    /* transition: all .5s ease-out; */
-    animation: rays_animation 2s ease-in infinite;
-
-
+.Rays2 {
+  width: 0px;
+  height: 0px;
+  background: #fdb813;
+  border-radius: 4px;
+  position: relative;
+  top: 12px;
+  left: -7px;
+  transform: rotateZ(45deg);
+  animation: rays_animation 2.8s ease-in infinite;
 }
 
-.Rays3::before{
-    content : "";
-    width : 0px;
-    height : 0px;
-    background: #FDB813;
-    border-radius: 4px;
-    position: absolute;
-    top : 0px;
-    left : -54px;
-    animation: rays_animation 2s ease-in infinite;
-    /* transition: all .5s ease-out; */
+.Rays2::before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  background: #fdb813;
+  border-radius: 4px;
+  position: absolute;
+  top: 0px;
+  left: -54px;
+  animation: rays_animation 2.8s ease-in infinite;
 }
 
-@keyframes rays_animation{
-    0%
-    {
-        width : 0px;
-        height : 0px;
-    }
-    25%
-    {
-        width : 0px;
-        height : 0px;
-    }
-    50%
-    {
-        width : 0px;
-        height : 0px;
-    }
-    
-    75%
-    {
-        width : 18px;
-        height : 3px;
-    }
-
-    80%{
-        width : 20px;
-        height : 4px;
-    }
-
-    100%
-    {
-        width : 20px;
-        height : 4px;
-    }
+.Rays3 {
+  width: 0px;
+  height: 0px;
+  background: #fdb813;
+  border-radius: 4px;
+  position: relative;
+  top: -31px;
+  left: -6px;
+  transform: rotateZ(-45deg);
+  animation: rays_animation 2.8s ease-in infinite;
 }
 
-
-.Sun_animation .Center{
-    width : 30px;
-    height : 30px;
-    /* border-radius: 50px; */
-    background: #FDB813;
+.Rays3::before {
+  content: "";
+  width: 0px;
+  height: 0px;
+  background: #fdb813;
+  border-radius: 4px;
+  position: absolute;
+  top: 0px;
+  left: -54px;
+  animation: rays_animation 2.8s ease-in infinite;
 }
 
-/* .Sun_animation .Rays,.Sun_animation .Rays::before, .Sun_animation .Rays1, .Sun_animation .Rays1::before, .Sun_animation .Rays2 ,.Sun_animation .Rays2::before, .Sun_animation .Rays3,.Sun_animation .Rays3::before{
-    width : 20px;
-    height : 4px; 
-}*/
+@keyframes rays_animation {
+  0% {
+    width: 0px;
+    height: 0px;
+  }
+  10% {
+    width: 20px;
+    height: 4px;
+  }
+  25% {
+    width: 20px;
+    height: 4px;
+  }
+  35% {
+    width: 20px;
+    height: 4px;
+  }
+  40% {
+    width: 0px;
+    height: 0px;
+  }
+  100% {
+    width: 0px;
+    height: 0px;
+  }
+}

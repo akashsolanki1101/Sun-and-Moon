@@ -2,12 +2,20 @@ const sun = document.querySelector(".Sun");
 const moon = document.querySelector(".Moon");
 const main = document.querySelector(".Main");
 
-setInterval(function(){
+function swinging(){
     sun.classList.add("Sun_animation");
-    moon.classList.remove("Moon_animation")
-},1000);
+        setTimeout(function(){
+            sun.classList.remove("Sun_animation")
+            setTimeout(function(){
+                moon.classList.add("Moon_animation")
+                setTimeout(function(){
+                    moon.classList.remove("Moon_animation")
+            },900)
+            },500)
+        },900)
+}
 
-setInterval(function(){
-    sun.classList.remove("Sun_animation")
-    moon.classList.add("Moon_animation")
-},2000)
+swinging();
+    
+setInterval(swinging,2800);    
+
